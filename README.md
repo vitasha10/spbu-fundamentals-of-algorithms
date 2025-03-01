@@ -46,3 +46,10 @@ TODO
 План:
 1. Выполнить `intro_to_numpy_and_matplotlib.ipynb`
 
+## Practicum 2
+
+Изучение `networkx` и базовых понятий теории графов.
+
+План:
+1. Выполнить `intro_to_networkx.ipynb`
+
