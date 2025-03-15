@@ -53,3 +53,5 @@ TODO
 План:
 1. Выполнить `intro_to_networkx.ipynb`
 
+Датасеты:
+1. Сеть 500 наиболее загруженных аэропортов в США: http://opsahl.co.uk/tnet/datasets/USairport500.txt
