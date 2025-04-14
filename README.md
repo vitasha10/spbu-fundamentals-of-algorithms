@@ -1,34 +1,34 @@
 # spbu-fundamentals-of-algorithms
-Materials for the practicum for "Fundamentals of Algorithms" course at SpbU
+Материалы для практик по дисциплине "Основы алгоритмов", читаемой на факультете ПМ-ПУ в СпбГУ.
 
 ## Getting started
 
-Set up your python environment. It is recommended to use [miniconda](https://docs.anaconda.com/miniconda) and python 3.10 and higher. You will need to install the latest versions of numpy, matplotlib and networkx which can be done via running
+Для начала необходимо настроить свой python environment. Рекомендуется использовать [miniconda](https://docs.anaconda.com/miniconda) и python 3.10 и выше. Вам также необходимо будет скачать последние версии numpy, matplotlib и других библиотек, перечисленных в `requirements.txt`. Находясь в ваш python environment, вы можете это сделать через
 ```bash
 $ cd /path/to/your/repo/clone
 $ pip install -r requirements.txt
 ```
 
-While working with this repo, you will need to be able to import functions from it which means it either should be added to PYTHONPATH or somehow installed to site-packages. Below we list several ways how this can be done.
+Работая с данным репозиторием, вам необходимо будет экспортировать функции из него и запускать скрипты из корня репозитория. Следовательно, вам необходимо добавить его в PYTHONPATH. Ниже перечислены несколько способов, как это можно сделать.
 
-### Terminal (any environment)
+### Terminal (python venv и conda)
 
-Run this command in the terminal and work within the same session:
+Выполните следующую команду в терминале и продолжайте работу в той же сессии:
 ```bash
 export PYTHONPATH=/path/to/your/repo/clone:$PYTHONPATH
 ```
-This command must be run again if a new session is created. To avoid this tedious move, just copy it to the config file of your terminal (e.g., `.bash_profile` or `.bash_rc`).
+Эта команда должна выполняться каждый раз, когда создается новая сессия. Чтобы упростить себе жизнь, можно добавить вызов это команды в конфиг вашего терминала/шелла (например, `.bash_profile` или `.bash_rc`.
 
-### Terminal (conda)
+### Terminal (только conda)
 
-Run this command in the terminal with the conda environment being activated:
+Выполните следующую команду в терминале с активированным conda environment:
 ```bash
 conda develop /path/to/your/repo/clone
 ```
 
 ### VSCode
 
-Go to `Run and Debug` in the left panel, create a new launch file, select `Python File` and add the following field:
+Выберите `Run and Debug` в левой панели, создайте новый launch file, выберите `Python File` и добавьте следующее поле:
 ```yaml
 "env": {
     "PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"
@@ -39,19 +39,37 @@ Go to `Run and Debug` in the left panel, create a new launch file, select `Pytho
 
 TODO
 
-## Practicum 1
+## Сдача домашних заданий
+
+1. Создайте форк данного репозитория.
+2. Выполните необходимое домашнее задание до указанного дедлайна.
+3. Добавьте решение домашнего задания в ветку с названием `Группа\_Фамилия_Имя\_practicum\_N` в своем форке, где группа указывается в формате BXX (например, B15 или B16), фамилия и имя пишутся латиницей и N обозначает номер практики, к которой относится домашнее задание. Пример: `B15_Pershin_Anton_practicum_3`.
+4. Создайте pull request в оригинальном репозитории из своей ветки `Группа\_Фамилия_Имя\_practicum\_N` и дайте ему то же самое название.
+
+## Практика 1
 
 Изучение `python`, `numpy` и  `matplotlib`, необходимых для дальнейшей работы. Предполагается, что студент имеет базовые знания python.
 
-План:
+**План**
 1. Выполнить `intro_to_numpy_and_matplotlib.ipynb`
 
-## Practicum 2
+## Практика 2
 
-Изучение `networkx` и базовых понятий теории графов.
+Начало работы с графовыми и графовыми алгоритмами с помощью `networkx`.
 
-План:
-1. Выполнить `intro_to_networkx.ipynb`
+**План:**
+1. Выполнить `practicum_2/intro_to_networkx.ipynb`
 
-Датасеты:
-1. Сеть 500 наиболее загруженных аэропортов в США: http://opsahl.co.uk/tnet/datasets/USairport500.txt
+## Практика 3
+
+Изучение базовых характеристик графов.
+
+**План**
+1. Выполнить `practicum_3/degree_distributions.py`
+
+**Датасеты**
+1. Сеть 500 наиболее загруженных аэропортов в США: http://opsahl.co.uk/tnet/datasets/USairport500.txt 
+
+**Домашнее задание**
+1. [Реализовать меры центральности](practicum_3/homework/README.md). Дедлайн: 2025.04.25 23:59.
+
