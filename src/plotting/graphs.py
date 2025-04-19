@@ -1,3 +1,5 @@
+from typing import Any
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
@@ -6,13 +8,26 @@ import networkx as nx
 from networkx.drawing.nx_pydot import graphviz_layout
 
 
-def plot_graph(G, node_weights=None, figsize=(6, 5), name=None):
+def plot_graph(
+    G, 
+    node_weights=None,
+    figsize=(6, 5),
+    name=None,
+    highlighted_edges: list[tuple[Any, Any]] = None
+):
     fig, ax = plt.subplots(1, 1, figsize=figsize)
+    edge_color_list = ["black"] * len(G.edges)
+    if highlighted_edges:
+        for i, edge in enumerate(G.edges()):
+            if edge in highlighted_edges or (edge[1], edge[0]) in highlighted_edges:
+                edge_color_list[i] = "red"
+
     options = dict(
         ax=ax,
         font_size=12,
         node_size=500,
         edgecolors="black",
+        edge_color=edge_color_list,
     )
     
     if node_weights is not None:
