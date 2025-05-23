@@ -11,8 +11,6 @@ from src.common import AnyNxGraph
 
 
 class DfsViaLifoQueueWithPostvisit(GraphTraversal):
-    def __init__(self, graph):
-        self.graph = graph
     def run(self, node: Any) -> None:
         visited = set()
         stack = deque()
@@ -29,7 +27,7 @@ class DfsViaLifoQueueWithPostvisit(GraphTraversal):
                 # Prepare for postprocessing
                 stack.append((current, 'exit'))
                 # Add neighbors to stack
-                for neighbor in reversed(list(self.graph.neighbors(current))):
+                for neighbor in reversed(list(self.G.neighbors(current))):
                     if neighbor not in visited:
                         stack.append((neighbor, 'enter'))
             elif state == 'exit':
